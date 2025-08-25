@@ -8,6 +8,13 @@
 
 A Minecraft Fabric mod that blocks sounds when wool is placed between the sound source and the player. Perfect for creating soundproof rooms or reducing noise pollution in your builds!
 
+<details>
+  <summary>Video Preview</summary>
+
+  [![Watch the video](https://img.youtube.com/vi/VL3ZaNkZjbY/0.jpg)](https://youtu.be/VL3ZaNkZjbY)
+
+</details>
+
 ## Features
 
 - **Sound Blocking**: Automatically blocks sounds when wool blocks are in the line of sight between the sound source and player
