@@ -42,13 +42,13 @@ jobs:
             ## Woolproofed v${{ steps.get_version.outputs.VERSION }}
             
             ### Installation
-            1. Download the `woolproofed-${{ steps.get_version.outputs.VERSION }}.jar` file
+            1. Download the `woolproofed-1.20.1-${{ steps.get_version.outputs.VERSION }}.jar` file
             2. Place it in your `.minecraft/mods` folder
             3. Make sure you have Fabric Loader and Fabric API installed
             
             ### Files
-            - **woolproofed-${{ steps.get_version.outputs.VERSION }}.jar** - The main mod file
-            - **woolproofed-${{ steps.get_version.outputs.VERSION }}-sources.jar** - Source code for developers
+            - **woolproofed-1.20.1-${{ steps.get_version.outputs.VERSION }}.jar** - The main mod file
+            - **woolproofed-1.20.1-${{ steps.get_version.outputs.VERSION }}-sources.jar** - Source code for developers
             
             ### Requirements
             - Minecraft 1.21.7
@@ -62,7 +62,7 @@ jobs:
             - Per-world configuration storage
             - Real-time speed adjustments
           files: |
-            build/libs/woolproofed-${{ steps.get_version.outputs.VERSION }}.jar
-            build/libs/woolproofed-${{ steps.get_version.outputs.VERSION }}-sources.jar
+            build/libs/woolproofed-1.20.1-${{ steps.get_version.outputs.VERSION }}.jar
+            build/libs/woolproofed-1.20.1-${{ steps.get_version.outputs.VERSION }}-sources.jar
           draft: false
           prerelease: false
