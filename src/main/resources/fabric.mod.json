@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "woolproofed",
+	"version": "${version}",
+	"name": "Woolproofed",
+	"description": "A mod that blocks sounds when wool is placed between the sound source and the player.",
+	"authors": [
+		"SSnowly"
+	],
+	"contact": {
+		"homepage": "https://github.com/SSnowly/woolproofed",
+		"sources": "https://github.com/SSnowly/woolproofed"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/woolproofed/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"hu.snowylol.woolproofed.Woolproofed"
+		],
+		"client": [
+			"hu.snowylol.woolproofed.WoolproofedClient"
+		]
+	},
+	"mixins": [
+		"woolproofed.mixins.json",
+		{
+			"config": "woolproofed.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
