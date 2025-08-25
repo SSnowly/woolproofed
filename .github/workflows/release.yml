@@ -51,7 +51,7 @@ jobs:
             - **woolproofed-1.20.1-${{ steps.get_version.outputs.VERSION }}-sources.jar** - Source code for developers
             
             ### Requirements
-            - Minecraft 1.21.7
+            - Minecraft 1.20.1
             - Fabric Loader 0.17.2+
             - Fabric API
             - Java 21+
