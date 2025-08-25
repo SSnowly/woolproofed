@@ -1,0 +1,68 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'r*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Validate gradle wrapper
+        uses: gradle/actions/wrapper-validation@v4
+        
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'microsoft'
+          
+      - name: Make gradle wrapper executable
+        run: chmod +x ./gradlew
+        
+      - name: Build project
+        run: ./gradlew build
+        
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/r}" >> $GITHUB_OUTPUT
+        
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Woolproofed v${{ steps.get_version.outputs.VERSION }}
+          body: |
+            ## Woolproofed v${{ steps.get_version.outputs.VERSION }}
+            
+            ### Installation
+            1. Download the `woolproofed-${{ steps.get_version.outputs.VERSION }}.jar` file
+            2. Place it in your `.minecraft/mods` folder
+            3. Make sure you have Fabric Loader and Fabric API installed
+            
+            ### Files
+            - **woolproofed-${{ steps.get_version.outputs.VERSION }}.jar** - The main mod file
+            - **woolproofed-${{ steps.get_version.outputs.VERSION }}-sources.jar** - Source code for developers
+            
+            ### Requirements
+            - Minecraft 1.21.7
+            - Fabric Loader 0.17.2+
+            - Fabric API
+            - Java 21+
+            
+            ### Features
+            - Configure minecart speeds for different minecart types
+            - Command-line configuration with `/minecartspeed`
+            - Per-world configuration storage
+            - Real-time speed adjustments
+          files: |
+            build/libs/woolproofed-${{ steps.get_version.outputs.VERSION }}.jar
+            build/libs/woolproofed-${{ steps.get_version.outputs.VERSION }}-sources.jar
+          draft: false
+          prerelease: false
