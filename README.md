@@ -31,7 +31,7 @@ A Minecraft Fabric mod that blocks sounds when wool is placed between the sound 
 
 ## Installation
 
-1. Download the latest release from the [Releases](https://github.com/clamytoe/woolproofed/releases).
+1. Download the latest release from the [Releases](https://github.com/SSnowly/woolproofed/releases).
 2. Place the JAR file in your `mods/` folder.
 3. Install Fabric Loader and Fabric API for 1.21.1.
 4. Launch Minecraft.
